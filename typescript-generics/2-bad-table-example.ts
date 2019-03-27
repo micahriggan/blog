@@ -32,8 +32,3 @@ function testBadTable() {
   cars.getColumn("age"); // [undefined, undefined]
 
 }
-
-/*
- * LOGS
- * [ 'Micah' ]
- */
