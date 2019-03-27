@@ -36,8 +36,37 @@ Here are some common array destructuring patterns :
 * Get the name property and then assign it to a variable called firstName
 * Get the second element from the array
 
-{% gist https://gist.github.com/micahriggan/2fe963033267bef56422ed3dae01ce63 %}
-    
+
+```javascript
+function getPeople() {
+  return [{name: "Bob"}, {name: "Sam"}, {name: "Tom"}];
+}
+function test1() {
+  const [firstPerson] = getPeople();
+  console.log(firstPerson);
+}
+function test2() {
+  const [firstPerson, ...rest] = getPeople(); 
+  console.log(rest);
+}
+function test3() {
+  const [{name}] = getPeople(); 
+  console.log(name);
+}
+function test4() {
+  const [{name: firstName}] = getPeople(); 
+  console.log(firstName);
+}
+function test5() {
+  const [_, secondPerson] = getPeople();
+  console.log(secondPerson);
+}
+test1();
+test2();
+test3();
+test4();
+test5();
+```
 
 
 ## Outputs
@@ -56,7 +85,40 @@ Here are some common object destructuring patterns
 * Get the ISBN property, which will default to '0000000'
 * Get the title property, and everything else collected into a variable named rest
 
-{% gist https://gist.github.com/micahriggan/51fd9db1cc9b09fd8041072da8cf87ef %}
+```javascript 
+const Book = {
+  title: 'A book title',
+  pages: 55,
+  height: 100,
+  weight: 2,
+  price: 3.50
+};
+function test1() {
+  const {title} = Book;
+  console.log(title);
+}
+function test2() {
+  const {title, pages} = Book;
+  console.log({title, pages});
+}
+function test3() {
+  const {height: bookHeight} = Book;
+  console.log(bookHeight);
+}
+function test4() {
+  const {ISBN = '0000000'} = Book;
+  console.log(ISBN);
+}
+function test5() {
+  const {title, ...rest} = Book;
+  console.log(rest);
+}
+test1();
+test2();
+test3();
+test4();
+test5();
+```
 
 ## Outputs
 ```
@@ -74,7 +136,37 @@ In this example we've got some common destructuring patterns for function parame
 * Getting the first element of an array, and the remainder of the array
 * Unpacking an array into a new array, with a new element at the end
 
-{% gist https://gist.github.com/micahriggan/869d42a2e22a105fc491c1882ef11fc9 %}
+```javascript
+function log(...args) {
+  console.log(args);
+}
+function getName({name}) {
+  console.log(name);
+}
+function pop([first, ...rest]) {
+  return rest;
+}
+function push(array, elem) {
+  return [...array, elem];
+}
+
+function test1() {
+  log("Hello", "World")
+}
+function test2() {
+  getName({name: 'Micah', points: 100});
+}
+function test3() {
+  console.log(pop(["First", "Second", "Third"]));
+}
+function test4() {
+  console.log(push(["First"], "Second"));
+}
+test1();
+test2();
+test3();
+test4();
+```
 
 ## Outputs
 ```
