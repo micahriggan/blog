@@ -25,6 +25,8 @@ In this post I want to show some examples, and contrast the code safety from usi
 
 ## Example 1: Log Obj[key]
 In this example, logValue takes and object, and a key of that object. It logs the value associated with the key on that object.
+
+```typescript
 /* given an object of type T,
  * log the value of a property, specified by the argument key
  */
@@ -45,6 +47,7 @@ function simpleTest() {
  */
 simpleTest();
 
+```
 
 The benefit we gain here is if we attempt to log an invalid key, we'll get a compile error. This prevents typos and other invalid key errors. We can only specify a valid key as the second argument to logValue.
 ```typescript
@@ -57,6 +60,7 @@ In this example we've got two types of data we're dealing with.  Person, and Car
 
 See if you can spot the errors you're allowed to create with BadTable
 
+```typescript
 interface Person {
   name: string;
   age: number;
@@ -96,11 +100,13 @@ function testBadTable() {
  * LOGS
  * [ 'Micah' ]
  */
+```
 
 
 ## Example 3: Type Safe Table
 In the previous example, we were allowed to make a typo, and also attempt to get a column for keys that aren't on our types. In this example I've commented out the lines that we're no longer allowed to write due to the type-checking.
 
+```typescript
 interface Person {
   name: string;
   age: number;
@@ -137,6 +143,7 @@ function testTable() {
 }
 
 testTable();
+```
 
 
 ## Conclusion
