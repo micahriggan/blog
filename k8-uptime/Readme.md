@@ -63,7 +63,8 @@ alive: 4856.096ms
 Kubernetes makes it pretty easy to scale up how many containers are running. For my final test I wanted to see it run 10 randomly-die containers, and watch it restart them
 
 ```bash
-[k8-scale](k8-scale-up.sh)
+kubectl scale deployment --replicas=10 randomly-die
+# deployment.extensions "randomly-die" scaled
 ```
 # Conclusion
 Now we've got 10 containers running that randomly die, and we can watch the "restarts" counter increment as kubernetes restarts them.
