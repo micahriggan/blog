@@ -13,7 +13,7 @@ setInterval(() => {
 }, 100)
 ```
 
-So I downloaded minikube, and virtual box, and did 
+I downloaded minikube, and virtual box, and ran 
 
 ```bash
 minikube start

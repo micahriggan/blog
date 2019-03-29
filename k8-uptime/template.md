@@ -6,7 +6,7 @@ Today I gave kubernetes a shot for the first time. I was interested in it's auto
 :[randomly-die](randomly-die.js)
 ```
 
-So I downloaded minikube, and virtual box, and did 
+I downloaded minikube, and virtual box, and ran 
 
 ```bash
 minikube start
