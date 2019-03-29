@@ -58,5 +58,5 @@ Kubernetes makes it pretty easy to scale up how many containers are running. For
 Now we've got 10 containers running that randomly die, and we can watch the "restarts" counter increment as kubernetes restarts them.
 ![minikube scale image](scaled.png "kubernetes scaled up")
 
-Pretty sweet.
+Pretty cool!
 

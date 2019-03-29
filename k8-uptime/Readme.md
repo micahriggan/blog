@@ -70,5 +70,5 @@ kubectl scale deployment --replicas=10 randomly-die
 Now we've got 10 containers running that randomly die, and we can watch the "restarts" counter increment as kubernetes restarts them.
 ![minikube scale image](scaled.png "kubernetes scaled up")
 
-Pretty sweet.
+Pretty cool!
 
