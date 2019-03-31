@@ -55,6 +55,9 @@ In the last example, we had to add numbers which were returned asynchronously, b
 
 In this example, we'll get our username, and then we'll fetch two pieces of information which depend on our username.
 
+```javascript
+:[data](3-async-dependencies.js)
+```
 
 
 ### Output
