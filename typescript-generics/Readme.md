@@ -27,26 +27,30 @@ In this post I want to show some examples, and contrast the code safety from usi
 In this example, logValue takes and object, and a key of that object. It logs the value associated with the key on that object.
 
 ```typescript
-/* given an object of type T,
- * log the value of a property, specified by the argument key
- */
-function logValue<T>(obj: T, key: keyof T) {
+function anyLogValue(obj: any, key: string) {
+  console.log(obj[key]);
+}
+
+function genericLogValue<T>(obj: T, key: keyof T) {
   console.log(obj[key]);
 }
 
 function simpleTest() {
   const Micah = {name: 'Micah'};
-  logValue(Micah, "name")
-  // The following would be invalid because "age" is not a key of Micah
-  // logValue(Micah, "age")
+  genericLogValue(Micah, "name")
+  // genericLogValue(Micah, "age")
+  // would not compile because "age" is not a key of Micah
+  anyLogValue(Micah, "age");
 }
-/*
- * LOGS
- * Micah
- *
- */
+
 simpleTest();
 
+```
+
+### Outputs
+```
+Micah
+undefined
 ```
 
 The benefit we gain here is if we attempt to log an invalid key, we'll get a compile error. This prevents typos and other invalid key errors. We can only specify a valid key as the second argument to logValue.
@@ -90,27 +94,95 @@ function testBadTable() {
   const cars = new BadTable();
   cars.addRow({modelName: 'Toyota Something or Other', year: 2010});
   cars.addRow({modelNme: 'Honda Something or Other', year: 2010});
-  cars.getColumn("modelName");
-  cars.getColumn("year");
-  cars.getColumn("age"); // [undefined, undefined]
-
+  console.log(cars.getColumn("modelName"));
+  console.log(cars.getColumn("year"));
+  console.log(cars.getColumn("age")); // [undefined, undefined]
 }
+
+testBadTable();
+```
+### Outputs
+```typescript
+[ 'Toyota Something or Other', undefined ]
+[ 2010, 2010 ]
+[ undefined, undefined ]
 ```
 
 
-## Example 3: Type Safe Table
-In the previous example, we were allowed to make a typo, and also attempt to get a column for keys that aren't on our types. In this example I've commented out the lines that we're no longer allowed to write due to the type-checking.
+## Example 3: Stepping towards Generics
+In the previous example, we were allowed to make a typo, and also attempt to get a column for keys that aren't on our types. 
+In this example we'll start moving towards a stronger typed table, that isn't generic. This will create some logic duplication.
+In the process of generalization, we need to identify repeated logic, even when it comes to types
 
 ```typescript
-interface Person {
+export interface Person {
   name: string;
   age: number;
 }
 
-interface Car {
+export interface Car {
   modelName: string;
   year: number;
 }
+
+class PersonTable {
+  rows = new Array<Person>();
+  addRow(row: Person) {
+    this.rows.push(row);
+  }
+  getColumn(col: keyof Person) {
+    return this.rows.map(r => r[col]);
+  }
+}
+
+
+class CarTable {
+  rows = new Array<Car>();
+  addRow(row: Car) {
+    this.rows.push(row);
+  }
+  getColumn(col: keyof Car) {
+    return this.rows.map(r => r[col]);
+  }
+}
+
+function testTables() {
+  const people = new PersonTable()
+  //people.addRow({name: 'Micah'});
+  people.addRow({name: 'Micah', age: 25});
+
+  const cars = new CarTable();
+  cars.addRow({modelName: 'Toyota Something or Other', year: 2010});
+  //cars.addRow({modelNme: 'Honda Something or Other', year: 2010});
+  cars.getColumn("modelName");
+  cars.getColumn("year");
+  //cars.getColumn("age");
+}
+
+testTables();
+```
+
+## Example 4: Learning about Generics
+In our previous example we can see we had to implement a new Table per type in order to retain type safety.
+This duplication should be a signal that we can generalize.
+
+### Generics! 
+In typescript you can create a generic class, which allows you to pass types in as variables!
+
+```typescript
+class MyClass<TypeVar> {
+  myProp: TypeVar;
+}
+type GenericType<TypeVar> = TypeVar & {modified: boolean}
+function genericFn<TypeVar>(arg: TypeVar) {}
+```
+
+Now that we have the ability to define type variables, lets revise our duplicated classes
+
+### Generic Table
+
+```typescript
+import { Person, Car } from "./3-generalization-step-1";
 
 class Table<RowType> {
   rows = new Array<RowType>();
@@ -126,15 +198,12 @@ class Table<RowType> {
 
 function testTable() {
   const people = new Table<Person>()
-  //people.addRow({name: 'Micah'});
   people.addRow({name: 'Micah', age: 25});
 
   const cars = new Table<Car>();
   cars.addRow({modelName: 'Toyota Something or Other', year: 2010});
-  //cars.addRow({modelNme: 'Honda Something or Other', year: 2010});
   cars.getColumn("modelName");
   cars.getColumn("year");
-  //cars.getColumn("age");
 }
 
 testTable();
@@ -142,4 +211,4 @@ testTable();
 
 
 ## Conclusion
-By using generics we can define functions, classes, or types which work with whatever type, and still retain type safety.
+By using `generics<T>` we can define functions, classes, or types which work with variable types. This is powerful because it allows us to write logic that holds for many types

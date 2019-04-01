@@ -1,12 +1,4 @@
-interface Person {
-  name: string;
-  age: number;
-}
-
-interface Car {
-  modelName: string;
-  year: number;
-}
+import { Person, Car } from "./3-generalization-step-1";
 
 class Table<RowType> {
   rows = new Array<RowType>();
@@ -22,15 +14,12 @@ class Table<RowType> {
 
 function testTable() {
   const people = new Table<Person>()
-  //people.addRow({name: 'Micah'});
   people.addRow({name: 'Micah', age: 25});
 
   const cars = new Table<Car>();
   cars.addRow({modelName: 'Toyota Something or Other', year: 2010});
-  //cars.addRow({modelNme: 'Honda Something or Other', year: 2010});
   cars.getColumn("modelName");
   cars.getColumn("year");
-  //cars.getColumn("age");
 }
 
 testTable();

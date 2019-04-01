@@ -30,6 +30,12 @@ In this example, logValue takes and object, and a key of that object. It logs th
 :[simple](1-simple-generics.ts)
 ```
 
+### Outputs
+```
+Micah
+undefined
+```
+
 The benefit we gain here is if we attempt to log an invalid key, we'll get a compile error. This prevents typos and other invalid key errors. We can only specify a valid key as the second argument to logValue.
 ```typescript
 // Example Compile Error
@@ -44,15 +50,42 @@ See if you can spot the errors you're allowed to create with BadTable
 ```typescript
 :[bad-table](2-bad-table-example.ts)
 ```
+### Outputs
+```typescript
+[ 'Toyota Something or Other', undefined ]
+[ 2010, 2010 ]
+[ undefined, undefined ]
+```
 
 
-## Example 3: Type Safe Table
-In the previous example, we were allowed to make a typo, and also attempt to get a column for keys that aren't on our types. In this example I've commented out the lines that we're no longer allowed to write due to the type-checking.
+## Example 3: Stepping towards Generics
+In the previous example, we were allowed to make a typo, and also attempt to get a column for keys that aren't on our types. 
+In this example we'll start moving towards a stronger typed table, that isn't generic. This will create some logic duplication.
+In the process of generalization, we need to identify repeated logic, even when it comes to types
 
 ```typescript
-:[generic-table](3-generic-table-example.ts)
+:[generalization](3-generalization-step-1.ts)
+```
+
+## Example 4: Learning about Generics
+In our previous example we can see we had to implement a new Table per type in order to retain type safety.
+This duplication should be a signal that we can generalize.
+
+### Generics! 
+In typescript you can create a generic class, which allows you to pass types in as variables!
+
+```typescript
+:[generics](4-generics-definition.ts)
+```
+
+Now that we have the ability to define type variables, lets revise our duplicated classes
+
+### Generic Table
+
+```typescript
+:[generic-table](4-generic-table-example.ts)
 ```
 
 
 ## Conclusion
-By using generics we can define functions, classes, or types which work with whatever type, and still retain type safety.
+By using `generics<T>` we can define functions, classes, or types which work with variable types. This is powerful because it allows us to write logic that holds for many types

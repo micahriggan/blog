@@ -27,8 +27,9 @@ function testBadTable() {
   const cars = new BadTable();
   cars.addRow({modelName: 'Toyota Something or Other', year: 2010});
   cars.addRow({modelNme: 'Honda Something or Other', year: 2010});
-  cars.getColumn("modelName");
-  cars.getColumn("year");
-  cars.getColumn("age"); // [undefined, undefined]
-
+  console.log(cars.getColumn("modelName"));
+  console.log(cars.getColumn("year"));
+  console.log(cars.getColumn("age")); // [undefined, undefined]
 }
+
+testBadTable();

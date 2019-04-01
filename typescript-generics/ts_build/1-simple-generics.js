@@ -1,19 +1,14 @@
-"use strict";
-/* given an object of type T,
- * log the value of a property, specified by the argument key
- */
-function logValue(obj, key) {
+function anyLogValue(obj, key) {
+    console.log(obj[key]);
+}
+function genericLogValue(obj, key) {
     console.log(obj[key]);
 }
 function simpleTest() {
     const Micah = { name: 'Micah' };
-    logValue(Micah, "name");
-    // The following would be invalid because "age" is not a key of Micah
-    // logValue(Micah, "age")
+    genericLogValue(Micah, "name");
+    // genericLogValue(Micah, "age")
+    // would not compile because "age" is not a key of Micah
+    anyLogValue(Micah, "age");
 }
-/*
- * LOGS
- * Micah
- *
- */
 simpleTest();
