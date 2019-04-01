@@ -4,7 +4,6 @@ Typescript is great for developer experience.
 
 You get real-time feedback about the validity of your code, and self documenting code via type-annotations. Also, the auto-complete and jump to definition features are game changing for speed.
 
-
 In Typescript you write logic in terms of types. Sometimes you need to write logic that is valid for multiple types. One common example is an Array. You can have an Array of any type of thing.
 
 ```typescript
@@ -36,7 +35,9 @@ Micah
 undefined
 ```
 
-The benefit we gain here is if we attempt to log an invalid key, we'll get a compile error. This prevents typos and other invalid key errors. We can only specify a valid key as the second argument to logValue.
+The benefit we gain here is if we attempt to log an invalid key, we'll get a compile error.
+
+This prevents typos and other invalid key errors. We can only specify a valid key as the second argument to logValue.
 ```typescript
 // Example Compile Error
 logValue(Micah, "age");
@@ -60,7 +61,9 @@ See if you can spot the errors you're allowed to create with BadTable
 
 ## Example 3: Stepping towards Generics
 In the previous example, we were allowed to make a typo, and also attempt to get a column for keys that aren't on our types. 
+
 In this example we'll start moving towards a stronger typed table, that isn't generic. This will create some logic duplication.
+
 In the process of generalization, we need to identify repeated logic, even when it comes to types
 
 ```typescript
@@ -69,6 +72,7 @@ In the process of generalization, we need to identify repeated logic, even when 
 
 ## Example 4: Learning about Generics
 In our previous example we can see we had to implement a new Table per type in order to retain type safety.
+
 This duplication should be a signal that we can generalize.
 
 ### Generics! 
@@ -88,4 +92,4 @@ Now that we have the ability to define type variables, lets revise our duplicate
 
 
 ## Conclusion
-By using `generics<T>` we can define functions, classes, or types which work with variable types. This is powerful because it allows us to write logic that holds for many types
+Types help prevent common bugs. By using `generics<T>` we can define functions, classes, or types which work with variable types. This is powerful because it allows us to write logic that holds for many types
