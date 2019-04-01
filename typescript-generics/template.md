@@ -92,8 +92,9 @@ Now that we have the ability to define type variables, lets revise our duplicate
 
 
 ## Conclusion
-Types help prevent common bugs. By using `generics<T>` we can define functions, classes, or types which work with variable types. 
+Types help prevent common bugs. 
 
+By using `generics<T>` we can define functions, classes, or types which work with variable types. 
 This allows us to write logic that holds for many types.
 
 To generalize code, we need to identify repeated logic, even when it comes to types.
