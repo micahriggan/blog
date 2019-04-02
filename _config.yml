@@ -1,1 +1,4 @@
-theme: jekyll-theme-slate
+theme: jekyll-theme-minimal
+github:
+  is_project_page: true
+  repository_url: https://github.com/micahriggan/blog
