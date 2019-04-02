@@ -1,7 +1,7 @@
-# {Destructuring} = JavaScript
+# Kubernetes First Time Project - Auto-Restarting
+Today I gave kubernetes a shot for the first time. I was interested in it's auto-restart feature, so I wrote a simple node.js program
 
-Destructuring is great for referencing pieces of objects or arrays. I find it to be very useful, and fun.
-[Click here to read more](destructuring-is-fun)
+[Click here to read more](k8-uptime)
 ---
 # Serial Promises vs Parallel Promises
 
@@ -34,7 +34,8 @@ Did you know you can add properties conditionally to an object with spread?
 
 [Click here to read more](js-wizardry)
 ---
-# Kubernetes First Time Project - Auto-Restarting
-Today I gave kubernetes a shot for the first time. I was interested in it's auto-restart feature, so I wrote a simple node.js program
+# {Destructuring} = JavaScript
 
-[Click here to read more](k8-uptime)
+Destructuring is great for referencing pieces of objects or arrays. I find it to be very useful, and fun.
+[Click here to read more](destructuring-is-fun)
+
