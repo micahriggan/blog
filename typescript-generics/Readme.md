@@ -13,6 +13,7 @@ Array<Array<number>>
 Array<{name: string}>
 ```
 
+
 This concept is called a template type, or a generic. Here's an example of a linked list type
 
 ```typescript
