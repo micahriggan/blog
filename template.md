@@ -1,6 +1,6 @@
 # Micah Riggan
-![](image.webp)
 
+---
 
 :[ Learning Kubernetes ](k8-uptime/header.md)
 [Click here to read more](k8-uptime)
