@@ -1,7 +1,6 @@
 # Micah Riggan
 
-[twitter](https://twitter.com/micahriggan)
-
+[twitter](https://twitter.com/micahriggan) 
 [linkedin](https://www.linkedin.com/in/micah-riggan/)
 
 ---
