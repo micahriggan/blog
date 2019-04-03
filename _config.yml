@@ -1,4 +1,5 @@
 theme: jekyll-theme-minimal
 github:
+  logo: image.webp
   is_project_page: true
   repository_url: https://github.com/micahriggan/blog
