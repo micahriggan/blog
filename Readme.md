@@ -1,5 +1,5 @@
 # Micah Riggan
-![](https://media.giphy.com/media/9P1DbPcBGzFludfD8O/giphy.gif)
+![](image.webp)
 
 
 # Kubernetes First Time Project - Auto-Restarting

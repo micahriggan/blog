@@ -1,5 +1,5 @@
 # Micah Riggan
-![](https://media.giphy.com/media/9P1DbPcBGzFludfD8O/giphy.gif)
+![](image.webp)
 
 
 :[ Learning Kubernetes ](k8-uptime/header.md)
