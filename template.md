@@ -1,5 +1,9 @@
 # Micah Riggan
 
+[twitter](https://twitter.com/micahriggan)
+
+[linkedin](https://www.linkedin.com/in/micah-riggan/)
+
 ---
 
 :[ Learning Kubernetes ](k8-uptime/header.md)
