@@ -1,3 +1,7 @@
+# Micah Riggan
+![](https://media.giphy.com/media/9P1DbPcBGzFludfD8O/giphy.gif)
+
+
 :[ Learning Kubernetes ](k8-uptime/header.md)
 [Click here to read more](k8-uptime)
 

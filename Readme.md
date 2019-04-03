@@ -1,3 +1,7 @@
+# Micah Riggan
+![](https://media.giphy.com/media/9P1DbPcBGzFludfD8O/giphy.gif)
+
+
 # Kubernetes First Time Project - Auto-Restarting
 Today I gave kubernetes a shot for the first time. I was interested in it's auto-restart feature, so I wrote a simple node.js program
 
