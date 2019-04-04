@@ -5,6 +5,15 @@
 
 ---
 
+# Blogging with Vim + Git + GHstatic + Hercule
+
+I've been enjoying some posts on [dev.to](https://dev.to/gypsydave5/how-i-write-blog-posts-these-days-204g) about blogging style, so I wanted to briefly write about my dead simple setup that vibes with my coding style.
+
+
+[Click here to read more](blogging-from-github/header.md)
+
+---
+
 # Kubernetes First Time Project - Auto-Restarting
 Today I gave kubernetes a shot for the first time. I was interested in it's auto-restart feature, so I wrote a simple node.js program
 
