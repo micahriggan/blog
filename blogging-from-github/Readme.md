@@ -71,6 +71,12 @@ One interesting usecase I've found for this, is breaking the header into it's ow
 
 Once I've finished my post, I move the folder up a directory, and add a reference to it in the top level [template.md](../template.md) file
 
+
+![](toplevel.png)
+
+This makes it pretty easy to maintain an index of my posts, with little summaries, which update when I change the corresponding file
+
+
 ## Posting to dev.to
 After pushing everything up to github, I copy the markdown, and find all relative links, and replace them with absolute links to the github repo. 
 
@@ -78,9 +84,6 @@ Now all my pictures and links should work.
 
 
 
-![](toplevel.png)
-
-This makes it pretty easy to maintain an index of my posts, with little summaries, which update when I change the corresponding file
 
 ## Conclusion
 You can use hercule to turn your files into components, which can be imported into multiple markdown files. This allows you to write tests against examples, and have your blog posts update as you change source files.

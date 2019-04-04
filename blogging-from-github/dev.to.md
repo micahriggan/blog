@@ -3,7 +3,6 @@ title: Markdown Blogging with Git + Hercule
 published: false
 description: 
 tags: 
-canonical_url: https://github.com/micahriggan/blog/blob/master/blogging-from-github/Readme.md
 ---
 
 I've been enjoying [some posts on dev.to](https://dev.to/gypsydave5/how-i-write-blog-posts-these-days-204g) about blogging style, so I wanted to briefly write about my dead simple setup that vibes with my coding style.
@@ -43,7 +42,7 @@ Transcluding is like linking, but it takes the contents of a file, and puts it w
 So I can write
 ```
     javascript
-    : [an example of transcluding] (https://github.com/micahriggan/blog/blob/master/blogging-from-github/example.js)
+    : [an example of transcluding] (https://github.com/micahriggan/blog/raw/master/blogging-from-github/example.js)
     
 ```
 and the contents of example.js will be put inside the javascript code block.
@@ -54,7 +53,7 @@ which looks like
 console.log('this file was transcluded!');
 ```
 
-If this is unclear, feel free to checkout the [template.md for this post](https://github.com/micahriggan/blog/blob/master/blogging-from-github/template.md)
+If this is unclear, feel free to checkout the [template.md for this post](https://github.com/micahriggan/blog/raw/master/blogging-from-github/template.md)
 
 ## Make tools for yourself
 
@@ -67,7 +66,7 @@ So now I can use test snippets, and then transclude them into my Readme file all
 
 This testing phase tends to look like the following.
 
-![](https://github.com/micahriggan/blog/blob/master/blogging-from-github/example.png)
+![](https://github.com/micahriggan/blog/raw/master/blogging-from-github/example.png)
 
 
 ## Wrapping it all up
@@ -75,18 +74,18 @@ Using hercule is awesome, because now I can break my post into multiple files, a
 
 One interesting usecase I've found for this, is breaking the header into it's own file, and then using it again in my toplevel readme.
 
-Once I've finished my post, I move the folder up a directory, and add a reference to it in the top level [template.md](https://github.com/micahriggan/blog/blob/master/template.md) file
+Once I've finished my post, I move the folder up a directory, and add a reference to it in the top level [template.md](https://github.com/micahriggan/blog/raw/master/template.md) file
+
+![](https://github.com/micahriggan/blog/raw/master/blogging-from-github/toplevel.png)
+
+This makes it pretty easy to maintain an index of my posts, with little summaries, which update when I change the corresponding file
+
 
 ## Posting to dev.to
 After pushing everything up to github, I copy the markdown, and find all relative links, and replace them with absolute links to the github repo. 
 
-
-
 Now all my pictures and links should work.
 
-![](https://github.com/micahriggan/blog/blob/master/blogging-from-github/toplevel.png)
-
-This makes it pretty easy to maintain an index of my posts, with little summaries, which update when I change the corresponding file
 
 ## Conclusion
 You can use hercule to turn your files into components, which can be imported into multiple markdown files. This allows you to write tests against examples, and have your blog posts update as you change source files.
