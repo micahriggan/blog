@@ -35,14 +35,14 @@ Deploying is as simple as a git push since I'm using github static pages.
 ## Code Friendly
 I want to blog about code, and I don't want to have to copy and paste updates into my posts as I refine the code.
 
-After searching for a bit, I found out you can transclude markdown files with a tool called hercule
+After searching for a bit, I found out you can transclude markdown files with a tool called [hercule](https://www.npmjs.com/package/hercule)
 
 Transcluding is like linking, but it takes the contents of a file, and puts it where the link was.
 
 So I can write
 ```
     javascript
-    : [an example of transcluding] (https://github.com/micahriggan/blog/raw/master/blogging-from-github/example.js)
+    : [an example of transcluding] (example.js)
     
 ```
 and the contents of example.js will be put inside the javascript code block.
