@@ -25,7 +25,7 @@ We'll call `getStream` and `getGenerator` to get these.,
 
 From this example, we can see async generators are very small to define. 
 
-Generator consumpiton also fits well with async await and for loops.
+Generator consumption also fits well with async await and for loops.
 
 We can also see from the output that one of the 100ms iterations was used to close stream by pushing null.
 

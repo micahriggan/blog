@@ -1,5 +1,5 @@
 # Streams and Generators
-In javascript we sometimes have to deal with large sets of data that come in asynchrounously. 
+In javascript we sometimes have to deal with large sets of data that come in asynchronously. 
 
 Two tools we can use to do this are streams and generators.
 
@@ -129,7 +129,7 @@ generator: 1034.700ms
 
 From this example, we can see async generators are very small to define. 
 
-Generator consumpiton also fits well with async await and for loops.
+Generator consumption also fits well with async await and for loops.
 
 We can also see from the output that one of the 100ms iterations was used to close stream by pushing null.
 
