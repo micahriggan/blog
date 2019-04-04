@@ -1,8 +1,8 @@
 ---
-title: Markdown Blogging with Git + Hercule
+title: Markdown Blogging with Git + Vim + Hercule
 published: false
-description: 
-tags: 
+description: transclude markdown with code samples for a better experience
+tags: blogging,meta,git,vim
 ---
 
 I've been enjoying [some posts on dev.to](https://dev.to/gypsydave5/how-i-write-blog-posts-these-days-204g) about blogging style, so I wanted to briefly write about my dead simple setup that vibes with my coding style.
