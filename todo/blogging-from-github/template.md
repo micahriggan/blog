@@ -66,7 +66,7 @@ One interesting usecase I've found for this, is breaking the header into it's ow
 Once I've finished my post, I move the folder up a directory, and add a reference to it in the top level `template.md` file
 
 
-![](example.png)
+![](toplevel.png)
 
 This makes it pretty easy to maintain an index of my posts, with little summaries, which update when I change the corresponding file
 
