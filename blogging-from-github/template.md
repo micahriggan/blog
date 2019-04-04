@@ -70,6 +70,11 @@ Once I've finished my post, I move the folder up a directory, and add a referenc
 
 ![](toplevel.png)
 
+which looks like
+
+
+![](output.png)
+
 This makes it pretty easy to maintain an index of my posts, with little summaries, which update when I change the corresponding file
 
 
