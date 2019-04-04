@@ -2,6 +2,7 @@
 
 [twitter](https://twitter.com/micahriggan) 
 [linkedin](https://www.linkedin.com/in/micah-riggan/)
+[blog](https://micahr.me)
 
 ---
 

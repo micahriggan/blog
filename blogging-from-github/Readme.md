@@ -69,7 +69,7 @@ Using hercule is awesome, because now I can break my post into multiple files, a
 
 One interesting usecase I've found for this, is breaking the header into it's own file, and then using it again in my toplevel readme.
 
-Once I've finished my post, I move the folder up a directory, and add a reference to it in the top level `template.md` file
+Once I've finished my post, I move the folder up a directory, and add a reference to it in the top level [template.md](../template.md) file
 
 
 ![](toplevel.png)
