@@ -10,12 +10,14 @@
 I've been enjoying [some posts on dev.to](https://dev.to/gypsydave5/how-i-write-blog-posts-these-days-204g) about blogging style, so I wanted to briefly write about my dead simple setup that vibes with my coding style.
 
 
-[Click here to read more](blogging-from-github/header.md)
+
+[Click here to read more](blogging-from-github)
 
 ---
 
 # Kubernetes First Time Project - Auto-Restarting
 Today I gave kubernetes a shot for the first time. I was interested in it's auto-restart feature, so I wrote a simple node.js program
+
 
 [Click here to read more](k8-uptime)
 
@@ -26,6 +28,7 @@ Today I gave kubernetes a shot for the first time. I was interested in it's auto
 In javascript we often need to do multiple asynchronous things.
 
 I'd like to use this post to show a few examples of doing things serially, and in parallel with promises.
+
 
 [Click here to read more](parallel-promises)
 
@@ -46,12 +49,14 @@ Array<Array<number>>
 Array<{name: string}>
 ```
 
+
 [Click here to read more](typescript-generics)
 
 ---
 
 # Javascript Property Wizardry
 Did you know you can add properties conditionally to an object with spread?
+
 
 
 [Click here to read more](js-wizardry)
@@ -61,6 +66,7 @@ Did you know you can add properties conditionally to an object with spread?
 # {Destructuring} = JavaScript
 
 Destructuring is great for referencing pieces of objects or arrays. I find it to be very useful, and fun.
+
 
 
 [Click here to read more](destructuring-is-fun)
