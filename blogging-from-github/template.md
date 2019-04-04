@@ -44,6 +44,8 @@ which looks like
 :[example](example.js)
 ```
 
+If this is unclear, feel free to checkout the [template.md for this post](template.md)
+
 ## Make tools for yourself
 
 So with this in mind, I wrote a quick little script that uses hercule to automatically transclude a file named template.md into a new file named Readme.md
