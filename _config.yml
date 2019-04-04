@@ -1,4 +1,5 @@
 theme: jekyll-theme-minimal
+google_analytics: UA-91330004-1
 github:
   is_project_page: true
   repository_url: https://github.com/micahriggan/blog
