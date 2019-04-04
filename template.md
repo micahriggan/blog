@@ -5,6 +5,10 @@
 [blog](https://micahr.me)
 
 ---
+:[Streams and Generators](streams-and-generators/header.md)
+
+[Click here to read more](streams-and-generators)
+
 
 :[Blogging With Github + Vim + Hercule](blogging-from-github/header.md)
 

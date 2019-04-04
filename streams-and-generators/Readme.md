@@ -5,6 +5,8 @@ Two tools we can use to do this are streams and generators.
 
 Generators yield data, and continue logic after each yielded item is consumed.
 
+
+
 ReadableStreams are the same in that data proceeds to flow as you consume it.
 
 Both of these are great for consuming data as it comes in, and creating flows of data.
