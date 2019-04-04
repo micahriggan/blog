@@ -1,5 +1,9 @@
 const stream = require('stream');
 
+function getRandomString() {
+  return (Math.random() * 16).toString(16)
+}
+
 function getStream(time) {
   class TimeStream extends stream.Readable {
     constructor(time) {
@@ -10,8 +14,7 @@ function getStream(time) {
     _read(size) {
       setTimeout(() => {
         if(Date.now() < this.streamEnds) {
-          const randomBuff = (Math.random() * 16).toString(16)
-          this.push(randomBuff);
+          this.push(getRandomString());
         } else {
           this.push(null);
         }
@@ -24,10 +27,9 @@ function getStream(time) {
 function* getGenerator(time) {
   const streamEnds = Date.now() + time;
   while(Date.now() < streamEnds) {
-    const randomBuff = (Math.random() * 16).toString(16)
     yield new Promise(resolve => {
       setTimeout(() => {
-        resolve(randomBuff);
+        resolve(getRandomString());
       }, 100)
     });
   }

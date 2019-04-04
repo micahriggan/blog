@@ -1,0 +1,25 @@
+Testing stream...
+0 'e.d244c32e8623'
+1 '5.b1684670615e'
+2 '7.a3ccc5ad7cd5'
+3 '1.30698269b999'
+4 'a.0df84371e841'
+5 'e.04b9ee941ba'
+6 'f.b4e328ecf36f'
+7 '2.a3834203577d'
+8 'f.472469520bcf'
+9 'end'
+stream: 1027.421ms
+
+Testing async generator...
+0 'c.a0345feebe33'
+1 '1.3feb27ad4b78'
+2 'e.de0f74e641c4'
+3 'b.dc5b66f56322'
+4 '1.ec8915a4b07c'
+5 '2.d94dde53ff09'
+6 'd.e8b57a3b028d'
+7 '9.6454bafaf36b'
+8 '2.01d0ada9e78a'
+9 '7.5142faf39563'
+generator: 1034.700ms
