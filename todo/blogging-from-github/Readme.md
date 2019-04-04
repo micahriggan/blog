@@ -36,19 +36,20 @@ Transcluding is like linking, but it takes the contents of a file, and puts it w
 
 So I can write
 
-```
-\```javascript
-`: [an example of transcluding] (example.js\)`
-\```
-```
+    ```javascript
+    : [an example of transcluding] (example.js)
+    ````
+
 
 and the contents of example.js will be put inside the javascript code block.
 
-which looks like 
+which transcludes to:
 
 ```javascript
 console.log('this file was transcluded!');
 ```
+
+## Make tools for yourself
 
 So with this in mind, I wrote a quick little script that uses hercule to automatically transclude a file named template.md into a new file named Readme.md
 
@@ -63,7 +64,7 @@ This testing phase tends to look like the following.
 
 
 ## Wrapping it all up
-Using hercule is a life saver, because now I can break my post into multiple files, and then recombine them.
+Using hercule is awesome, because now I can break my post into multiple files, and then recombine them.
 
 One interesting usecase I've found for this, is breaking the header into it's own file, and then using it again in my toplevel readme.
 
