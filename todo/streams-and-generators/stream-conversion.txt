@@ -1,0 +1,11 @@
+Creating a async Generator from a Stream
+0 'f.6dfb26cab328'
+1 'a.8c94362cf36e'
+2 '7.b47f998704cb'
+3 'a.dc7efc4982c2'
+4 'b.5e5fd0931c5d'
+5 '3.4edbe9fb9d62'
+6 'e.aaf3b1dc96a6'
+7 'd.ced3f7967cce'
+8 'd.81907afbd9b4'
+generator: 1027.344ms

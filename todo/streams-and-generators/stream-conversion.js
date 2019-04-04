@@ -1,7 +1,6 @@
 const getDataStream = require('./data-stream');
 
-function* getDataGenerator() {
-  const ds = getDataStream(1000)
+function* getStreamAdapter(ds) {
   let done = false;
   ds.on('end', d => {done = true})
   while(!done) {
@@ -15,17 +14,19 @@ function* getDataGenerator() {
 async function testDataGenerator() {
   let i = 0;
   console.time('generator');
-  for (const asyncData of getDataGenerator()) {
+  const ds = getDataStream(1000)
+  for (const asyncData of getStreamAdapter(ds)) {
     const data = await asyncData;
     if(data) {
-      console.log(i++, data);
+      console.log(i++, data.toString());
     }
   }
   console.timeEnd('generator');
 }
 
 if(require.main === module) {
+  console.log("Creating a async Generator from a Stream");
   testDataGenerator();
 }
 
-module.exports = getDataGenerator;
+module.exports = getStreamAdapter;

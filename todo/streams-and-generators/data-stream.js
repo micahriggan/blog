@@ -1,24 +1,19 @@
 const stream = require('stream');
 
-function getDataStream (time) {
+function getStream(time) {
   class TimeStream extends stream.Readable {
     constructor(time) {
       super();
       this.setMaxListeners(100);
-      this.time = time;
       this.streamEnds = Date.now() + time;
     }
     _read(size) {
-      const id = setTimeout(() => {
-        try  {
-          if(Date.now() < this.streamEnds) {
-            const randomBuff = (Math.random() * 16).toString(16)
-            this.push(randomBuff);
-          } else {
-            this.push(null);
-          }
-        } catch(e) {
-          this.emit('error', e);
+      setTimeout(() => {
+        if(Date.now() < this.streamEnds) {
+          const randomBuff = (Math.random() * 16).toString(16)
+          this.push(randomBuff);
+        } else {
+          this.push(null);
         }
       }, 100);
     }
@@ -26,15 +21,52 @@ function getDataStream (time) {
   return new TimeStream(time);
 }
 
-function testDataStream() {
+function* getGenerator(time) {
+  const streamEnds = Date.now() + time;
+  while(Date.now() < streamEnds) {
+    const randomBuff = (Math.random() * 16).toString(16)
+    yield new Promise(resolve => {
+      setTimeout(() => {
+        resolve(randomBuff);
+      }, 100)
+    });
+  }
+}
+
+function testStream() {
+  return new Promise(resolve => {
+    let i = 0;
+    console.time('stream');
+    const ds = getStream(1000);
+    ds.on('data', (data) => console.log(i++, data.toString()));
+    ds.on('end', () => {
+      console.log(i++, 'end');
+      console.timeEnd('stream')
+      resolve();
+    });
+  });
+}
+
+async function testGenerator() {
   let i = 0;
-  console.time('stream');
-  const ds = getDataStream(1000);
-  ds.on('data', (data) => console.log(i++, data));
-  ds.on('end', () => console.timeEnd('stream'));
+  console.time('generator');
+  const generator = getGenerator(1000);
+  for(const asyncData of generator) {
+    const data = await asyncData;
+    console.log(i++, data)
+  }
+  console.timeEnd('generator');
+}
+
+async function main() {
+  console.log('Testing stream...');
+  await testStream();
+  console.log();
+  console.log('Testing async generator...');
+  await testGenerator();
 }
 
 if(require.main === module) {
-  testDataStream();
+  main();
 }
-module.exports = getDataStream;
+module.exports = getStream;
