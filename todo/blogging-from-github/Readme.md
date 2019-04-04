@@ -40,10 +40,9 @@ So I can write
     : [an example of transcluding] (example.js)
     ````
 
-
 and the contents of example.js will be put inside the javascript code block.
 
-which transcludes to:
+which looks like 
 
 ```javascript
 console.log('this file was transcluded!');
