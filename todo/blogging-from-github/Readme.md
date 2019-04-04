@@ -1,4 +1,8 @@
-:[header](header.md)
+# Blogging with Vim + Git + GHstatic + Hercule
+
+I've been enjoying some posts on [dev.to](https://dev.to/gypsydave5/how-i-write-blog-posts-these-days-204g) about blogging style, so I wanted to briefly write about my dead simple setup that vibes with my coding style.
+
+
 
 ## Dev style
 I've a big fan of vim+tmux. I like being able to quickly open terminals, jumping from editor panes to terminal panes and running snippets of code to test them.
@@ -43,7 +47,7 @@ and the contents of example.js will be put inside the javascript code block.
 which looks like 
 
 ```javascript
-:[example](example.js)
+console.log('this file was transcluded!');
 ```
 
 So with this in mind, I wrote a quick little script that uses hercule to automatically transclude a file named template.md into a new file named Readme.md
