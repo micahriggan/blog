@@ -6,7 +6,7 @@
 ---
 
 :[Blogging With Github + Vim + Hercule](blogging-from-github/header.md)
-[Click here to read more](blogging-from-github/header.md)
+[Click here to read more](blogging-from-github)
 
 ---
 
